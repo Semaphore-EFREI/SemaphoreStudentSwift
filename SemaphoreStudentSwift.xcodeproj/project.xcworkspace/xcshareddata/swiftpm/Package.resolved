@@ -1,0 +1,15 @@
+{
+  "originHash" : "e5e132d937490a62b68ba54fd5d67224e2d91fd35aa4a173d87e4baccfdb1a9d",
+  "pins" : [
+    {
+      "identity" : "drapeauswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Semaphore-EFREI/DrapeauSwift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "017599d18e144f26bf184c0978cc54e251aa6fd7"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Drapeau
+
 
 @main
 struct SemaphoreStudentSwiftApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DrApp {
+                ContentView()
+            }
         }
     }
 }

@@ -6,6 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3D5DC29C2E1740110058094E /* Drapeau in Frameworks */ = {isa = PBXBuildFile; productRef = 3D5DC29B2E1740110058094E /* Drapeau */; };
+		3D5DC2A32E17414B0058094E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A02E17414B0058094E /* ContentView.swift */; };
+		3D5DC2A42E17414B0058094E /* SemaphoreStudentSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A12E17414B0058094E /* SemaphoreStudentSwiftApp.swift */; };
+		3D5DC2A52E17414B0058094E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5DC29F2E17414B0058094E /* Assets.xcassets */; };
+		3D5DC2A72E17416B0058094E /* TodayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A62E17416B0058094E /* TodayPage.swift */; };
+		3D5DC2A92E17443F0058094E /* PastPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A82E17443F0058094E /* PastPage.swift */; };
+		3D5DC2AB2E174F890058094E /* FuturPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2AA2E174F890058094E /* FuturPage.swift */; };
+		3D5DC2AD2E1751F80058094E /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 3D5DC2AC2E1751F80058094E /* AppIcon.icon */; };
+		3D5DC2B12E177EA10058094E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B02E177EA10058094E /* Models.swift */; };
+		3D5DC2B22E177EA10058094E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2AF2E177EA10058094E /* APIClient.swift */; };
+		3D5DC2B52E177F610058094E /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B42E177F610058094E /* UserVM.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3D5DC27E2E173FE50058094E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +41,19 @@
 		3D5DC2702E173FE40058094E /* SemaphoreStudentSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SemaphoreStudentSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5DC27D2E173FE50058094E /* SemaphoreStudentSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemaphoreStudentSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5DC2872E173FE50058094E /* SemaphoreStudentSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemaphoreStudentSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D5DC29F2E17414B0058094E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D5DC2A02E17414B0058094E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D5DC2A12E17414B0058094E /* SemaphoreStudentSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreStudentSwiftApp.swift; sourceTree = "<group>"; };
+		3D5DC2A62E17416B0058094E /* TodayPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPage.swift; sourceTree = "<group>"; };
+		3D5DC2A82E17443F0058094E /* PastPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastPage.swift; sourceTree = "<group>"; };
+		3D5DC2AA2E174F890058094E /* FuturPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturPage.swift; sourceTree = "<group>"; };
+		3D5DC2AC2E1751F80058094E /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		3D5DC2AF2E177EA10058094E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		3D5DC2B02E177EA10058094E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		3D5DC2B42E177F610058094E /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3D5DC2722E173FE40058094E /* SemaphoreStudentSwift */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SemaphoreStudentSwift;
-			sourceTree = "<group>";
-		};
 		3D5DC2802E173FE50058094E /* SemaphoreStudentSwiftTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SemaphoreStudentSwiftTests;
@@ -52,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5DC29C2E1740110058094E /* Drapeau in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +95,8 @@
 		3D5DC2672E173FE40058094E = {
 			isa = PBXGroup;
 			children = (
-				3D5DC2722E173FE40058094E /* SemaphoreStudentSwift */,
+				3D5DC2AC2E1751F80058094E /* AppIcon.icon */,
+				3D5DC2A22E17414B0058094E /* SemaphoreStudentSwift */,
 				3D5DC2802E173FE50058094E /* SemaphoreStudentSwiftTests */,
 				3D5DC28A2E173FE50058094E /* SemaphoreStudentSwiftUITests */,
 				3D5DC2712E173FE40058094E /* Products */,
@@ -90,6 +111,46 @@
 				3D5DC2872E173FE50058094E /* SemaphoreStudentSwiftUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3D5DC29E2E17414B0058094E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC2A02E17414B0058094E /* ContentView.swift */,
+				3D5DC2A62E17416B0058094E /* TodayPage.swift */,
+				3D5DC2A82E17443F0058094E /* PastPage.swift */,
+				3D5DC2AA2E174F890058094E /* FuturPage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D5DC2A22E17414B0058094E /* SemaphoreStudentSwift */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC2A12E17414B0058094E /* SemaphoreStudentSwiftApp.swift */,
+				3D5DC29E2E17414B0058094E /* View */,
+				3D5DC2B32E177F470058094E /* ViewModel */,
+				3D5DC2AE2E177E8F0058094E /* Model */,
+				3D5DC29F2E17414B0058094E /* Assets.xcassets */,
+			);
+			path = SemaphoreStudentSwift;
+			sourceTree = "<group>";
+		};
+		3D5DC2AE2E177E8F0058094E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC2AF2E177EA10058094E /* APIClient.swift */,
+				3D5DC2B02E177EA10058094E /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D5DC2B32E177F470058094E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC2B42E177F610058094E /* UserVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,11 +168,9 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				3D5DC2722E173FE40058094E /* SemaphoreStudentSwift */,
-			);
 			name = SemaphoreStudentSwift;
 			packageProductDependencies = (
+				3D5DC29B2E1740110058094E /* Drapeau */,
 			);
 			productName = SemaphoreStudentSwift;
 			productReference = 3D5DC2702E173FE40058094E /* SemaphoreStudentSwift.app */;
@@ -195,6 +254,9 @@
 			);
 			mainGroup = 3D5DC2672E173FE40058094E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3D5DC29A2E1740110058094E /* XCRemoteSwiftPackageReference "DrapeauSwift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3D5DC2712E173FE40058094E /* Products */;
 			projectDirPath = "";
@@ -212,6 +274,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5DC2A52E17414B0058094E /* Assets.xcassets in Resources */,
+				3D5DC2AD2E1751F80058094E /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5DC2B12E177EA10058094E /* Models.swift in Sources */,
+				3D5DC2B52E177F610058094E /* UserVM.swift in Sources */,
+				3D5DC2B22E177EA10058094E /* APIClient.swift in Sources */,
+				3D5DC2A32E17414B0058094E /* ContentView.swift in Sources */,
+				3D5DC2A42E17414B0058094E /* SemaphoreStudentSwiftApp.swift in Sources */,
+				3D5DC2A92E17443F0058094E /* PastPage.swift in Sources */,
+				3D5DC2AB2E174F890058094E /* FuturPage.swift in Sources */,
+				3D5DC2A72E17416B0058094E /* TodayPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BK8PRMYFUA;
@@ -398,6 +471,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sémaphore";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Sémaphore a besoin d'accéder au NFC pour scanner la balise.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -433,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BK8PRMYFUA;
@@ -441,6 +517,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sémaphore";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Sémaphore a besoin d'accéder au NFC pour scanner la balise.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -609,6 +687,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D5DC29A2E1740110058094E /* XCRemoteSwiftPackageReference "DrapeauSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Semaphore-EFREI/DrapeauSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D5DC29B2E1740110058094E /* Drapeau */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D5DC29A2E1740110058094E /* XCRemoteSwiftPackageReference "DrapeauSwift" */;
+			productName = Drapeau;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D5DC2682E173FE40058094E /* Project object */;
 }

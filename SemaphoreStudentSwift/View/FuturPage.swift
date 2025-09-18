@@ -11,12 +11,20 @@ import Constants
 
 
 struct FuturPage: View {
+    
+    @ObservedObject var userVM: UserVM
+    
+    
+    
     var body: some View {
         DrapNavigationStack(title: "À Venir", backgroundColor: .drapQuaternaryBackground) {
             print()
         } content: {
-            Text("Hello")
-                .frame(maxWidth: .infinity)
+            VStack(spacing: 4) {
+                ForEach(userVM.futurCourses) { course in
+                    OtherCourseCell(course: course)
+                }
+            }
         }
 
     }
@@ -27,6 +35,6 @@ struct FuturPage: View {
 
 #Preview {
     PreviewScaffold(disablePadding: true) {
-        FuturPage()
+        FuturPage(userVM: UserVM())
     }
 }

@@ -7,90 +7,120 @@
 
 import SwiftUI
 import Combine
+import Drapeau
+import Constants
 
 
 class UserVM: ObservableObject {
     
     // MARK: Attributes
     
-    @Published var currentCourses: [CourseGetDTO] = []
-    @Published var todayCourses: [CourseGetDTO] = []
-    @Published var pastCourses: [CourseGetDTO] = []
-    @Published var futurCourses: [CourseGetDTO] = []
-    
-    private var apiClient: APIClient
+    @Published var currentCourses: [CourseVM] = []
+    @Published var todayCourses: [CourseVM] = []
+    @Published var pastCourses: [CourseVM] = []
+    @Published var futurCourses: [CourseVM] = []
     
     
     
     // MARK: Init
     
     init() {
-        let url = URL(string: "https://semaphore.lebonnec.uk/api")
-        self.apiClient = APIClient(baseURL: url!)
+        self.loadCourses()
     }
 
-    // MARK: - Network
-
-    /// Fetch the courses for the authenticated student and sort them
-    @MainActor
-    func fetchCourses() async {
-        do {
-            // Request courses with the associated student signatures
-            let courses = try await apiClient.getCourses(include: ["studentSignatures"])
-            sortCourses(courses)
-        } catch {
-            print("Failed to fetch courses: \(error)")
-        }
+    
+    
+    // MARK: Methods
+    
+    func loadCourses() {
+        self.groupCourses(Courses.values)
     }
-
-    // MARK: - Helpers
-
-    /// Sort courses by date in past, today or future and mark current ones
-    @MainActor
-    private func sortCourses(_ courses: [CourseGetDTO]) {
+    
+    
+    func groupCourses(_ courses: [CourseVM]) {
         let calendar = Calendar.current
         let now = Date()
-
-        var current: [CourseGetDTO] = []
-        var today: [CourseGetDTO] = []
-        var past: [CourseGetDTO] = []
-        var futur: [CourseGetDTO] = []
-
-        for course in courses {
-            let isToday = calendar.isDate(course.date, inSameDayAs: now)
-
-            // Determine if the course should be considered ongoing
-            let isCurrentTime = (course.date...course.endDate).contains(now)
-            let hasPresentSignature = course.studentSignatures?.contains(where: { $0.status == .present }) ?? false
-            let isCurrent = isToday && (isCurrentTime || hasPresentSignature)
-
-            if isCurrent {
-                current.append(course)
-            } else if isToday {
-                today.append(course)
-            } else if course.endDate < now {
-                past.append(course)
-            } else if course.date > now {
-                futur.append(course)
-            } else {
-                // Fallback for cross-day courses
-                if course.endDate < now {
-                    past.append(course)
-                } else {
-                    futur.append(course)
+        
+        // Début et fin de la journée courante
+        let todayStart = calendar.startOfDay(for: now)
+        let todayEnd = calendar.date(bySettingHour: 23, minute: 59, second: 59, of: todayStart)!
+        
+        let passed = courses.filter { $0.endDate < todayStart }
+        let today = courses.filter {
+            // Cours qui commencent ou finissent aujourd'hui
+            calendar.isDate($0.startDate, inSameDayAs: now) ||
+            calendar.isDate($0.endDate, inSameDayAs: now)
+        }
+        let current = courses.filter { $0.isCurrent() }
+        let future = courses.filter { $0.startDate > todayEnd }
+        
+        self.pastCourses = passed
+        self.todayCourses = today
+        self.currentCourses = current
+        self.futurCourses = future
+    }
+    
+    
+    
+    // MARK: Signature
+    
+    
+    func nfcView(drapManager: DrapContextWindowManager, nfcVM: NFCReaderViewModel, flashVM: FlashVM) -> ContextWindow<Text> {
+        return ContextWindow<Text>(image: "iPhone sur Balise", description: "Appuyez sur “Scanner la balise” et collez votre appareil sur celle-ci") {
+            ContextMenuBar {
+                DrapButton(icon: "chevron.left", title: "Annuler", tint: .drapPrimaryText, kind: .small) {
+                    drapManager.dismiss()
+                }
+            } trailing: {
+                DrapButton(icon: "flashlight.off.fill", tint: .drapPrimaryText, kind: .small) {
+                    drapManager.dismiss()
+                }
+            }
+        } actionButton: {
+            DrapButton(icon: "square.split.diagonal.fill", title: "Scanner la balise", tint: .drapBlue, kind: .primaryRounded) {
+                Task {
+                    let _ = await nfcVM.scanForNFCMessage()
+                    await MainActor.run {
+                        drapManager.present(self.signature(drapManager: drapManager))
+                    }
                 }
             }
         }
-
-        // Sort each section by start date
-        current.sort { $0.date < $1.date }
-        today.sort { $0.date < $1.date }
-        past.sort { $0.date < $1.date }
-        futur.sort { $0.date < $1.date }
-
-        self.currentCourses = current
-        self.todayCourses = today
-        self.pastCourses = past
-        self.futurCourses = futur
+    }
+    
+    
+    func flashView(drapManager: DrapContextWindowManager, nfcVM: NFCReaderViewModel, flashVM: FlashVM) -> ContextWindow<Text> {
+        return ContextWindow<Text>(image: "iPhone sur Balise", description: "Appuyez sur “Scanner la balise” et collez votre appareil sur celle-ci") {
+            ContextMenuBar {
+                DrapButton(icon: "chevron.left", title: "Annuler", tint: .drapPrimaryText, kind: .small) {
+                    drapManager.dismiss()
+                }
+            } trailing: {
+                DrapButton(icon: "flashlight.off.fill", tint: .drapPrimaryText, kind: .small) {
+                    drapManager.dismiss()
+                }
+            }
+        } actionButton: {
+            DrapButton(icon: "square.split.diagonal.fill", title: "Scanner la balise", tint: .drapBlue, kind: .primaryRounded) {
+                Task {
+                    let _ = await nfcVM.scanForNFCMessage()
+                    await MainActor.run {
+                        drapManager.present(self.signature(drapManager: drapManager))
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func signature(drapManager: DrapContextWindowManager) -> ContextWindow<Text> {
+        self.currentCourses[0].status = .signed
+        return ContextWindow<Text>(image: "Présent", description: "Vous êtes présent !") {
+            ContextMenuBar()
+        } actionButton: {
+            DrapButton(title: "Ok", tint: .drapGreen, kind: .primaryRounded) {
+                drapManager.dismiss()
+            }
+        }
     }
 }

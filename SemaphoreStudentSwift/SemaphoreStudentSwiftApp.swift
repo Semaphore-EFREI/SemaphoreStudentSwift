@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Drapeau
+import Constants
 
 
 @main
@@ -14,7 +15,9 @@ struct SemaphoreStudentSwiftApp: App {
     var body: some Scene {
         WindowGroup {
             DrApp {
-                ContentView()
+                Group {
+                    ContentView()
+                }
             }
         }
     }

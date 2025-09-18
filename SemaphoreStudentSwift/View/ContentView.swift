@@ -14,6 +14,7 @@ struct ContentView: View {
     
     // MARK: Attributes
     
+    @StateObject var userVM = UserVM()
     @State var value: Int = 1
     
     
@@ -23,15 +24,15 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $value) {
             Tab("Passé", systemImage: "arrow.left", value: 0) {
-                PastPage()
+                PastPage(userVM: userVM)
             }
             
             Tab("Aujourd'hui", systemImage: "calendar", value: 1) {
-                TodayPage()
+                TodayPage(userVM: userVM)
             }
             
             Tab("À Venir", systemImage: "arrow.right", value: 2) {
-                FuturPage()
+                FuturPage(userVM: userVM)
             }
         }
         .tint(.drapBlue)
@@ -44,6 +45,6 @@ struct ContentView: View {
 
 #Preview {
     PreviewScaffold(disablePadding: true) {
-        ContentView()
+        ContentView(userVM: UserVM())
     }
 }

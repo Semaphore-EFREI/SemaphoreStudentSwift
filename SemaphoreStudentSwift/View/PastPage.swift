@@ -11,12 +11,19 @@ import Constants
 
 
 struct PastPage: View {
+    
+    @ObservedObject var userVM: UserVM
+    
+    
     var body: some View {
         DrapNavigationStack(title: "Passé", backgroundColor: .drapSecondaryBackground) {
             print()
         } content: {
-            Text("Hello")
-                .frame(maxWidth: .infinity)
+            VStack(spacing: 4) {
+                ForEach(userVM.pastCourses) { course in
+                    OtherCourseCell(course: course)
+                }
+            }
         }
 
     }
@@ -28,6 +35,6 @@ struct PastPage: View {
 
 #Preview {
     PreviewScaffold(disablePadding: true) {
-        PastPage()
+        PastPage(userVM: UserVM())
     }
 }

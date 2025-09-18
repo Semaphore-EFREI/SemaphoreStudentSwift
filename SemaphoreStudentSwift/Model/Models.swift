@@ -1,4 +1,6 @@
 import Foundation
+import SwiftUI
+import Combine
 
 public enum SignatureStatus: String, Codable {
     case signed, present, absent
@@ -37,7 +39,7 @@ public struct ClassroomGetDTO: Codable {
     public let beacons: [BeaconGetDTO]?
 }
 
-public struct CourseGetDTO: Codable {
+public class CourseGetDTO: ObservableObject, Codable, Identifiable {
     public let id: UUID
     public let name: String
     public let date: Date
@@ -49,6 +51,20 @@ public struct CourseGetDTO: Codable {
     public let classrooms: [ClassroomGetDTO]?
     public let studentSignatures: [StudentSignatureGetDTO]?
     public let teacherSignatures: [TeacherSignatureGetDTO]?
+    
+    init(id: UUID, name: String, date: Date, endDate: Date, isOnline: Bool, signatureClosingDelay: Int, signatureClosed: Bool, school: UUID?, classrooms: [ClassroomGetDTO]?, studentSignatures: [StudentSignatureGetDTO]?, teacherSignatures: [TeacherSignatureGetDTO]?) {
+        self.id = id
+        self.name = name
+        self.date = date
+        self.endDate = endDate
+        self.isOnline = isOnline
+        self.signatureClosingDelay = signatureClosingDelay
+        self.signatureClosed = signatureClosed
+        self.school = school
+        self.classrooms = classrooms
+        self.studentSignatures = studentSignatures
+        self.teacherSignatures = teacherSignatures
+    }
 }
 
 public struct SchoolPreferencesGetDTO: Codable {

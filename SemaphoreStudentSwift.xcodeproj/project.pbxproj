@@ -18,6 +18,12 @@
 		3D5DC2B12E177EA10058094E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B02E177EA10058094E /* Models.swift */; };
 		3D5DC2B22E177EA10058094E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2AF2E177EA10058094E /* APIClient.swift */; };
 		3D5DC2B52E177F610058094E /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B42E177F610058094E /* UserVM.swift */; };
+		3D5DC2B72E178B0D0058094E /* CurrentCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B62E178B0D0058094E /* CurrentCourseCell.swift */; };
+		3D5DC2BC2E1798C00058094E /* OtherCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2BB2E1798C00058094E /* OtherCourseCell.swift */; };
+		3D5DC2BE2E17A5D20058094E /* CourseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2BD2E17A5D20058094E /* CourseVM.swift */; };
+		3D5DC2C02E17A8C50058094E /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2BF2E17A8C50058094E /* Courses.swift */; };
+		3D5DC2C22E17B5100058094E /* NFCReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2C12E17B5100058094E /* NFCReaderViewModel.swift */; };
+		3D5DC2C52E17BAA30058094E /* FlashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2C42E17BAA30058094E /* FlashVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,13 @@
 		3D5DC2AF2E177EA10058094E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3D5DC2B02E177EA10058094E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3D5DC2B42E177F610058094E /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
+		3D5DC2B62E178B0D0058094E /* CurrentCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCourseCell.swift; sourceTree = "<group>"; };
+		3D5DC2BB2E1798C00058094E /* OtherCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCourseCell.swift; sourceTree = "<group>"; };
+		3D5DC2BD2E17A5D20058094E /* CourseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVM.swift; sourceTree = "<group>"; };
+		3D5DC2BF2E17A8C50058094E /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		3D5DC2C12E17B5100058094E /* NFCReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewModel.swift; sourceTree = "<group>"; };
+		3D5DC2C32E17B6D10058094E /* SemaphoreStudentSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SemaphoreStudentSwift.entitlements; sourceTree = "<group>"; };
+		3D5DC2C42E17BAA30058094E /* FlashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -117,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3D5DC2A02E17414B0058094E /* ContentView.swift */,
-				3D5DC2A62E17416B0058094E /* TodayPage.swift */,
+				3D5DC2BA2E17914B0058094E /* Today */,
 				3D5DC2A82E17443F0058094E /* PastPage.swift */,
 				3D5DC2AA2E174F890058094E /* FuturPage.swift */,
 			);
@@ -127,6 +140,7 @@
 		3D5DC2A22E17414B0058094E /* SemaphoreStudentSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3D5DC2C32E17B6D10058094E /* SemaphoreStudentSwift.entitlements */,
 				3D5DC2A12E17414B0058094E /* SemaphoreStudentSwiftApp.swift */,
 				3D5DC29E2E17414B0058094E /* View */,
 				3D5DC2B32E177F470058094E /* ViewModel */,
@@ -149,8 +163,22 @@
 			isa = PBXGroup;
 			children = (
 				3D5DC2B42E177F610058094E /* UserVM.swift */,
+				3D5DC2BD2E17A5D20058094E /* CourseVM.swift */,
+				3D5DC2BF2E17A8C50058094E /* Courses.swift */,
+				3D5DC2C12E17B5100058094E /* NFCReaderViewModel.swift */,
+				3D5DC2C42E17BAA30058094E /* FlashVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3D5DC2BA2E17914B0058094E /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC2A62E17416B0058094E /* TodayPage.swift */,
+				3D5DC2B62E178B0D0058094E /* CurrentCourseCell.swift */,
+				3D5DC2BB2E1798C00058094E /* OtherCourseCell.swift */,
+			);
+			path = Today;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,11 +329,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D5DC2B12E177EA10058094E /* Models.swift in Sources */,
+				3D5DC2BE2E17A5D20058094E /* CourseVM.swift in Sources */,
 				3D5DC2B52E177F610058094E /* UserVM.swift in Sources */,
 				3D5DC2B22E177EA10058094E /* APIClient.swift in Sources */,
+				3D5DC2C22E17B5100058094E /* NFCReaderViewModel.swift in Sources */,
 				3D5DC2A32E17414B0058094E /* ContentView.swift in Sources */,
 				3D5DC2A42E17414B0058094E /* SemaphoreStudentSwiftApp.swift in Sources */,
 				3D5DC2A92E17443F0058094E /* PastPage.swift in Sources */,
+				3D5DC2B72E178B0D0058094E /* CurrentCourseCell.swift in Sources */,
+				3D5DC2C52E17BAA30058094E /* FlashVM.swift in Sources */,
+				3D5DC2C02E17A8C50058094E /* Courses.swift in Sources */,
+				3D5DC2BC2E1798C00058094E /* OtherCourseCell.swift in Sources */,
 				3D5DC2AB2E174F890058094E /* FuturPage.swift in Sources */,
 				3D5DC2A72E17416B0058094E /* TodayPage.swift in Sources */,
 			);
@@ -463,16 +497,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = SemaphoreStudentSwift/SemaphoreStudentSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BK8PRMYFUA;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = YES;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sémaphore";
-				INFOPLIST_KEY_NFCReaderUsageDescription = "Sémaphore a besoin d'accéder au NFC pour scanner la balise.";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "On a besoin du NFC";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -509,16 +554,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = SemaphoreStudentSwift/SemaphoreStudentSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BK8PRMYFUA;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = YES;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sémaphore";
-				INFOPLIST_KEY_NFCReaderUsageDescription = "Sémaphore a besoin d'accéder au NFC pour scanner la balise.";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "On a besoin du NFC";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

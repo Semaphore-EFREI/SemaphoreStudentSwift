@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D5DC29C2E1740110058094E /* Drapeau in Frameworks */ = {isa = PBXBuildFile; productRef = 3D5DC29B2E1740110058094E /* Drapeau */; };
+		3D2542E12F320B1700F5EB80 /* Faisceau in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2542E02F320B1700F5EB80 /* Faisceau */; };
+		3D2542E32F32118800F5EB80 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2542E22F32118800F5EB80 /* AppEnvironment.swift */; };
+		3D2543052F323B1400F5EB80 /* CourseDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2543042F323B1400F5EB80 /* CourseDetailPage.swift */; };
+		3D2543072F3240A100F5EB80 /* SignatureLandingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2543062F3240A100F5EB80 /* SignatureLandingWindow.swift */; };
+		3D25430A2F32532200F5EB80 /* SignatureWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2543092F32532200F5EB80 /* SignatureWindow.swift */; };
+		3D25430C2F32597C00F5EB80 /* SignatureVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25430B2F32597C00F5EB80 /* SignatureVM.swift */; };
 		3D5DC2A32E17414B0058094E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A02E17414B0058094E /* ContentView.swift */; };
 		3D5DC2A42E17414B0058094E /* SemaphoreStudentSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A12E17414B0058094E /* SemaphoreStudentSwiftApp.swift */; };
 		3D5DC2A52E17414B0058094E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5DC29F2E17414B0058094E /* Assets.xcassets */; };
-		3D5DC2A72E17416B0058094E /* TodayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A62E17416B0058094E /* TodayPage.swift */; };
-		3D5DC2A92E17443F0058094E /* PastPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2A82E17443F0058094E /* PastPage.swift */; };
-		3D5DC2AB2E174F890058094E /* FuturPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2AA2E174F890058094E /* FuturPage.swift */; };
 		3D5DC2AD2E1751F80058094E /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 3D5DC2AC2E1751F80058094E /* AppIcon.icon */; };
-		3D5DC2B12E177EA10058094E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B02E177EA10058094E /* Models.swift */; };
-		3D5DC2B22E177EA10058094E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2AF2E177EA10058094E /* APIClient.swift */; };
-		3D5DC2B52E177F610058094E /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B42E177F610058094E /* UserVM.swift */; };
-		3D5DC2B72E178B0D0058094E /* CurrentCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2B62E178B0D0058094E /* CurrentCourseCell.swift */; };
-		3D5DC2BC2E1798C00058094E /* OtherCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2BB2E1798C00058094E /* OtherCourseCell.swift */; };
-		3D5DC2BE2E17A5D20058094E /* CourseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2BD2E17A5D20058094E /* CourseVM.swift */; };
-		3D5DC2C02E17A8C50058094E /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2BF2E17A8C50058094E /* Courses.swift */; };
 		3D5DC2C22E17B5100058094E /* NFCReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2C12E17B5100058094E /* NFCReaderViewModel.swift */; };
 		3D5DC2C52E17BAA30058094E /* FlashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC2C42E17BAA30058094E /* FlashVM.swift */; };
+		3D78DD312F3294A600FD3C14 /* SignatureResultWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78DD302F3294A600FD3C14 /* SignatureResultWindow.swift */; };
+		3D78DD332F32C81500FD3C14 /* CourseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78DD322F32C81500FD3C14 /* CourseVM.swift */; };
+		3D78DD362F32DA0900FD3C14 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78DD352F32DA0900FD3C14 /* Date+Extensions.swift */; };
+		3D78DD382F33045200FD3C14 /* CryptoTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78DD372F33045200FD3C14 /* CryptoTools.swift */; };
+		3DF3CE9E2E7D6CA200543DA9 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3CE9D2E7D6CA200543DA9 /* MainPage.swift */; };
+		3DF3CEA12E7D874900543DA9 /* Drapeau in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF3CEA02E7D874900543DA9 /* Drapeau */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,26 +45,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D2542E22F32118800F5EB80 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		3D2543042F323B1400F5EB80 /* CourseDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailPage.swift; sourceTree = "<group>"; };
+		3D2543062F3240A100F5EB80 /* SignatureLandingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureLandingWindow.swift; sourceTree = "<group>"; };
+		3D2543092F32532200F5EB80 /* SignatureWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureWindow.swift; sourceTree = "<group>"; };
+		3D25430B2F32597C00F5EB80 /* SignatureVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureVM.swift; sourceTree = "<group>"; };
 		3D5DC2702E173FE40058094E /* SemaphoreStudentSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SemaphoreStudentSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5DC27D2E173FE50058094E /* SemaphoreStudentSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemaphoreStudentSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5DC2872E173FE50058094E /* SemaphoreStudentSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemaphoreStudentSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5DC29F2E17414B0058094E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D5DC2A02E17414B0058094E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3D5DC2A12E17414B0058094E /* SemaphoreStudentSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreStudentSwiftApp.swift; sourceTree = "<group>"; };
-		3D5DC2A62E17416B0058094E /* TodayPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPage.swift; sourceTree = "<group>"; };
-		3D5DC2A82E17443F0058094E /* PastPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastPage.swift; sourceTree = "<group>"; };
-		3D5DC2AA2E174F890058094E /* FuturPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturPage.swift; sourceTree = "<group>"; };
 		3D5DC2AC2E1751F80058094E /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
-		3D5DC2AF2E177EA10058094E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		3D5DC2B02E177EA10058094E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		3D5DC2B42E177F610058094E /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
-		3D5DC2B62E178B0D0058094E /* CurrentCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCourseCell.swift; sourceTree = "<group>"; };
-		3D5DC2BB2E1798C00058094E /* OtherCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCourseCell.swift; sourceTree = "<group>"; };
-		3D5DC2BD2E17A5D20058094E /* CourseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVM.swift; sourceTree = "<group>"; };
-		3D5DC2BF2E17A8C50058094E /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		3D5DC2C12E17B5100058094E /* NFCReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewModel.swift; sourceTree = "<group>"; };
 		3D5DC2C32E17B6D10058094E /* SemaphoreStudentSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SemaphoreStudentSwift.entitlements; sourceTree = "<group>"; };
 		3D5DC2C42E17BAA30058094E /* FlashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashVM.swift; sourceTree = "<group>"; };
+		3D78DD302F3294A600FD3C14 /* SignatureResultWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureResultWindow.swift; sourceTree = "<group>"; };
+		3D78DD322F32C81500FD3C14 /* CourseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVM.swift; sourceTree = "<group>"; };
+		3D78DD352F32DA0900FD3C14 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		3D78DD372F33045200FD3C14 /* CryptoTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTools.swift; sourceTree = "<group>"; };
+		3DF3CE9D2E7D6CA200543DA9 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -84,7 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5DC29C2E1740110058094E /* Drapeau in Frameworks */,
+				3DF3CEA12E7D874900543DA9 /* Drapeau in Frameworks */,
+				3D2542E12F320B1700F5EB80 /* Faisceau in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D2543082F3252F700F5EB80 /* SignatureWindows */ = {
+			isa = PBXGroup;
+			children = (
+				3D2543062F3240A100F5EB80 /* SignatureLandingWindow.swift */,
+				3D2543092F32532200F5EB80 /* SignatureWindow.swift */,
+				3D78DD302F3294A600FD3C14 /* SignatureResultWindow.swift */,
+			);
+			path = SignatureWindows;
+			sourceTree = "<group>";
+		};
 		3D5DC2672E173FE40058094E = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				3D5DC2A02E17414B0058094E /* ContentView.swift */,
-				3D5DC2BA2E17914B0058094E /* Today */,
-				3D5DC2A82E17443F0058094E /* PastPage.swift */,
-				3D5DC2AA2E174F890058094E /* FuturPage.swift */,
+				3DF3CE9D2E7D6CA200543DA9 /* MainPage.swift */,
+				3D2543042F323B1400F5EB80 /* CourseDetailPage.swift */,
+				3D2543082F3252F700F5EB80 /* SignatureWindows */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,6 +157,7 @@
 				3D5DC29E2E17414B0058094E /* View */,
 				3D5DC2B32E177F470058094E /* ViewModel */,
 				3D5DC2AE2E177E8F0058094E /* Model */,
+				3D78DD342F32D9F900FD3C14 /* Utils */,
 				3D5DC29F2E17414B0058094E /* Assets.xcassets */,
 			);
 			path = SemaphoreStudentSwift;
@@ -153,8 +166,6 @@
 		3D5DC2AE2E177E8F0058094E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3D5DC2AF2E177EA10058094E /* APIClient.swift */,
-				3D5DC2B02E177EA10058094E /* Models.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,23 +173,22 @@
 		3D5DC2B32E177F470058094E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3D5DC2B42E177F610058094E /* UserVM.swift */,
-				3D5DC2BD2E17A5D20058094E /* CourseVM.swift */,
-				3D5DC2BF2E17A8C50058094E /* Courses.swift */,
+				3D2542E22F32118800F5EB80 /* AppEnvironment.swift */,
 				3D5DC2C12E17B5100058094E /* NFCReaderViewModel.swift */,
 				3D5DC2C42E17BAA30058094E /* FlashVM.swift */,
+				3D25430B2F32597C00F5EB80 /* SignatureVM.swift */,
+				3D78DD322F32C81500FD3C14 /* CourseVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		3D5DC2BA2E17914B0058094E /* Today */ = {
+		3D78DD342F32D9F900FD3C14 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				3D5DC2A62E17416B0058094E /* TodayPage.swift */,
-				3D5DC2B62E178B0D0058094E /* CurrentCourseCell.swift */,
-				3D5DC2BB2E1798C00058094E /* OtherCourseCell.swift */,
+				3D78DD352F32DA0900FD3C14 /* Date+Extensions.swift */,
+				3D78DD372F33045200FD3C14 /* CryptoTools.swift */,
 			);
-			path = Today;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +208,8 @@
 			);
 			name = SemaphoreStudentSwift;
 			packageProductDependencies = (
-				3D5DC29B2E1740110058094E /* Drapeau */,
+				3DF3CEA02E7D874900543DA9 /* Drapeau */,
+				3D2542E02F320B1700F5EB80 /* Faisceau */,
 			);
 			productName = SemaphoreStudentSwift;
 			productReference = 3D5DC2702E173FE40058094E /* SemaphoreStudentSwift.app */;
@@ -283,7 +294,8 @@
 			mainGroup = 3D5DC2672E173FE40058094E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				3D5DC29A2E1740110058094E /* XCRemoteSwiftPackageReference "DrapeauSwift" */,
+				3DF3CE9F2E7D874900543DA9 /* XCRemoteSwiftPackageReference "DrapeauSwift" */,
+				3D2542DF2F320B1700F5EB80 /* XCRemoteSwiftPackageReference "Faisceau" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3D5DC2712E173FE40058094E /* Products */;
@@ -328,20 +340,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5DC2B12E177EA10058094E /* Models.swift in Sources */,
-				3D5DC2BE2E17A5D20058094E /* CourseVM.swift in Sources */,
-				3D5DC2B52E177F610058094E /* UserVM.swift in Sources */,
-				3D5DC2B22E177EA10058094E /* APIClient.swift in Sources */,
+				3D78DD382F33045200FD3C14 /* CryptoTools.swift in Sources */,
+				3D2542E32F32118800F5EB80 /* AppEnvironment.swift in Sources */,
 				3D5DC2C22E17B5100058094E /* NFCReaderViewModel.swift in Sources */,
+				3D2543052F323B1400F5EB80 /* CourseDetailPage.swift in Sources */,
+				3D78DD362F32DA0900FD3C14 /* Date+Extensions.swift in Sources */,
+				3D78DD312F3294A600FD3C14 /* SignatureResultWindow.swift in Sources */,
+				3D2543072F3240A100F5EB80 /* SignatureLandingWindow.swift in Sources */,
+				3D25430A2F32532200F5EB80 /* SignatureWindow.swift in Sources */,
 				3D5DC2A32E17414B0058094E /* ContentView.swift in Sources */,
 				3D5DC2A42E17414B0058094E /* SemaphoreStudentSwiftApp.swift in Sources */,
-				3D5DC2A92E17443F0058094E /* PastPage.swift in Sources */,
-				3D5DC2B72E178B0D0058094E /* CurrentCourseCell.swift in Sources */,
 				3D5DC2C52E17BAA30058094E /* FlashVM.swift in Sources */,
-				3D5DC2C02E17A8C50058094E /* Courses.swift in Sources */,
-				3D5DC2BC2E1798C00058094E /* OtherCourseCell.swift in Sources */,
-				3D5DC2AB2E174F890058094E /* FuturPage.swift in Sources */,
-				3D5DC2A72E17416B0058094E /* TodayPage.swift in Sources */,
+				3DF3CE9E2E7D6CA200543DA9 /* MainPage.swift in Sources */,
+				3D78DD332F32C81500FD3C14 /* CourseVM.swift in Sources */,
+				3D25430C2F32597C00F5EB80 /* SignatureVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +543,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaslebonnec.SemaphoreStudentSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,7 +600,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaslebonnec.SemaphoreStudentSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -745,20 +757,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3D5DC29A2E1740110058094E /* XCRemoteSwiftPackageReference "DrapeauSwift" */ = {
+		3D2542DF2F320B1700F5EB80 /* XCRemoteSwiftPackageReference "Faisceau" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Semaphore-EFREI/Faisceau.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		3DF3CE9F2E7D874900543DA9 /* XCRemoteSwiftPackageReference "DrapeauSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Semaphore-EFREI/DrapeauSwift";
 			requirement = {
-				branch = main;
+				branch = alpha;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3D5DC29B2E1740110058094E /* Drapeau */ = {
+		3D2542E02F320B1700F5EB80 /* Faisceau */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D5DC29A2E1740110058094E /* XCRemoteSwiftPackageReference "DrapeauSwift" */;
+			package = 3D2542DF2F320B1700F5EB80 /* XCRemoteSwiftPackageReference "Faisceau" */;
+			productName = Faisceau;
+		};
+		3DF3CEA02E7D874900543DA9 /* Drapeau */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DF3CE9F2E7D874900543DA9 /* XCRemoteSwiftPackageReference "DrapeauSwift" */;
 			productName = Drapeau;
 		};
 /* End XCSwiftPackageProductDependency section */

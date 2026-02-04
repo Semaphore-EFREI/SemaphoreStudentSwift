@@ -1,13 +1,22 @@
 {
-  "originHash" : "e5e132d937490a62b68ba54fd5d67224e2d91fd35aa4a173d87e4baccfdb1a9d",
+  "originHash" : "5e0489b83be83932c0b449e227b31ce0f651a95e2af9f7926528a4549a694016",
   "pins" : [
     {
       "identity" : "drapeauswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Semaphore-EFREI/DrapeauSwift",
       "state" : {
+        "branch" : "alpha",
+        "revision" : "6680cbf4bf3e76a034a09e87b7c6718bfdd32f45"
+      }
+    },
+    {
+      "identity" : "faisceau",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Semaphore-EFREI/Faisceau.git",
+      "state" : {
         "branch" : "main",
-        "revision" : "f10060d9169d6a5b50bad61e4fb23b8ed7d0a299"
+        "revision" : "e28fff75101e1ef5fa4a1f96ae1d7c1c8d08299b"
       }
     }
   ],

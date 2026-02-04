@@ -2,115 +2,119 @@
 //  CourseVM.swift
 //  SemaphoreStudentSwift
 //
-//  Created by Thomas Le Bonnec on 04/07/2025.
+//  Created by Thomas Le Bonnec on 04/02/2026.
 //
 
-import SwiftUI
-import Combine
-import Constants
+import Foundation
+import Drapeau
+import Faisceau
 
 
-class CourseVM: ObservableObject, Identifiable {
-    @Published var id = UUID()
-    @Published var title: String
-    @Published var startDate: Date
-    @Published var endDate: Date
-    @Published var status: CourseStatus?
+@Observable
+class CourseVM {
+    
+    // MARK: Attributes
+    
+    var id: UUID
+    var name: String
+    var date: Date
+    var endDate: Date
+    var isOnline: Bool
+    var signatureClosingDelay: Int
+    var signatureClosed: Bool
+    var classrooms: [FaisceauClassroom]?
+    var signatures: [FaisceauSignature]?
+    var teachers: [FaisceauTeacher]?
+    var students: [FaisceauStudent]?
+    var soloStudents: [FaisceauStudent]?
+    var studentGroups: [FaisceauStudentGroup]?
     
     
+    // MARK: Init
     
-    init(id: UUID = UUID(), title: String, startDate: Date, endDate: Date, status: CourseStatus? = nil) {
+    init(id: UUID, name: String, date: Date, endDate: Date, isOnline: Bool, signatureClosingDelay: Int, signatureClosed: Bool, classrooms: [FaisceauClassroom]? = nil, signatures: [FaisceauSignature]? = nil, teachers: [FaisceauTeacher]? = nil, students: [FaisceauStudent]? = nil, soloStudents: [FaisceauStudent]? = nil, studentGroups: [FaisceauStudentGroup]? = nil) {
         self.id = id
-        self.title = title
-        self.startDate = startDate
+        self.name = name
+        self.date = date
         self.endDate = endDate
-        self.status = status
+        self.isOnline = isOnline
+        self.signatureClosingDelay = signatureClosingDelay
+        self.signatureClosed = signatureClosed
+        self.classrooms = classrooms
+        self.signatures = signatures
+        self.teachers = teachers
+        self.students = students
+        self.soloStudents = soloStudents
+        self.studentGroups = studentGroups
+    }
+    
+    init(faisceauCourse: FaisceauCourse) {
+        self.id = faisceauCourse.id
+        self.name = faisceauCourse.name
+        self.date = Date(timeIntervalSince1970: Double(faisceauCourse.date))
+        self.endDate = Date(timeIntervalSince1970: Double(faisceauCourse.endDate))
+        self.isOnline = faisceauCourse.isOnline
+        self.signatureClosingDelay = faisceauCourse.signatureClosingDelay
+        self.signatureClosed = faisceauCourse.signatureClosed
+        self.classrooms = faisceauCourse.classrooms
+        self.signatures = faisceauCourse.signatures
+        self.teachers = faisceauCourse.teachers
+        self.students = faisceauCourse.students
+        self.soloStudents = faisceauCourse.soloStudents
+        self.studentGroups = faisceauCourse.studentGroups
     }
     
     
     
-    func isCurrent() -> Bool {
-        return Date() >= startDate && Date() <= endDate
-    }
+    // MARK: Methods
     
-    func isLater() -> Bool {
-        return Date() < startDate
-    }
-    
-    func isPassed() -> Bool {
-        return Date() > endDate
-    }
-    
-    
-    func color() -> Color {
-        if isLater() { return .drapGray }
-        
-        switch status {
-        case .present:
-            return .drapCyan
-        case .signed:
-            return .drapGreen
-        case .absent:
-            return .drapRed
-        default:
-            if isPassed() {
-                return .drapBrown
+    func refresh(api: FaisceauAPI) {
+        Task {
+            do {
+                let faisceauCourse = try await api.getCourseDetail(courseId: self.id)
+                await MainActor.run {
+                    self.name = faisceauCourse.name
+                    self.date = Date(timeIntervalSince1970: Double(faisceauCourse.date))
+                    self.endDate = Date(timeIntervalSince1970: Double(faisceauCourse.endDate))
+                    self.isOnline = faisceauCourse.isOnline
+                    self.signatureClosingDelay = faisceauCourse.signatureClosingDelay
+                    self.signatureClosed = faisceauCourse.signatureClosed
+                    self.classrooms = faisceauCourse.classrooms
+                    self.signatures = faisceauCourse.signatures
+                    self.teachers = faisceauCourse.teachers
+                    self.students = faisceauCourse.students
+                    self.soloStudents = faisceauCourse.soloStudents
+                    self.studentGroups = faisceauCourse.studentGroups
+                }
+            } catch {
+                print("ERREUR - CourseVM (refresh()): \(error)")
             }
-            return .drapBlue
         }
     }
     
     
-    func description() -> String {
-        if isLater() { return "Pas encore..." }
-        
-        switch status {
-        case .present:
-            return "Vous avez été mis présent"
-        case .signed:
-            return "Vous êtes présent"
-        case .absent:
-            return "Vous êtes absent"
-        default:
-            if isPassed() {
-                return "Une erreur s'est produite"
-            }
-            return "Vous pouvez signer"
+    func mySignature(userId: UUID) -> FaisceauSignature? {
+        signatures?.first { signature in
+            signature.teacherId == userId || signature.studentId == userId
         }
     }
     
     
-    func icone() -> String {
-        if isLater() { return "circle" }
-        
-        switch status {
-        case .present:
-            return "checkmark"
-        case .signed:
-            return "checkmark"
-        case .absent:
-            return "xmark"
-        default:
-            if isPassed() {
-                return "circle"
+    func status(userId: UUID) -> CourseStatus {
+        if let signature = mySignature(userId: userId) {
+            return switch signature.status {
+            case .absent: .absent
+            case .justified: .absent
+            case .late: .late
+            case .present: .presentToken
+            case .signed: .present
+            case .none: .error
             }
-            return "clock"
         }
+        
+        if Date() < date { return .later }
+        if Date().isBetween(Date(timeIntervalSince1970: date.timeIntervalSince1970 + Double(signatureClosingDelay * 60)), and: endDate) { return .late}
+        if Date().isBetween(date, and: endDate) { return .now }
+        return .error
     }
-    
-    
-    func timeIntervalString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH'h'mm"
-        formatter.locale = Locale(identifier: "fr_FR")
-        let startString = formatter.string(from: startDate)
-        let endString = formatter.string(from: endDate)
-        return "\(startString) - \(endString)"
-    }
-    
-    
-    enum CourseStatus {
-        case present, signed, absent
-    }
-    
 }

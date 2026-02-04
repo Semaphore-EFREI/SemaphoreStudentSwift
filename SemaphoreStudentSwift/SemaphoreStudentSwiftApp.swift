@@ -7,11 +7,14 @@
 
 import SwiftUI
 import Drapeau
-import Constants
 
 
 @main
 struct SemaphoreStudentSwiftApp: App {
+    
+    @State var appEnvironment = AppEnvironment()
+    
+    
     var body: some Scene {
         WindowGroup {
             DrApp {
@@ -20,5 +23,6 @@ struct SemaphoreStudentSwiftApp: App {
                 }
             }
         }
+        .environment(appEnvironment)
     }
 }

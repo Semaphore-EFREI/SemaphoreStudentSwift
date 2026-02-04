@@ -7,35 +7,39 @@
 
 import SwiftUI
 import Drapeau
-import Constants
+import Styles
 
 
 struct ContentView: View {
     
     // MARK: Attributes
     
-    @StateObject var userVM = UserVM()
-    @State var value: Int = 1
-    
+    @Environment(AppEnvironment.self) var appEnvironment
     
     
     // MARK: View
     
     var body: some View {
-        TabView(selection: $value) {
-            Tab("Passé", systemImage: "arrow.left", value: 0) {
-                PastPage(userVM: userVM)
+        if appEnvironment.loading {
+            ZStack {
+                Color.drapPrimaryBackground.ignoresSafeArea()
+                Text("Chargement")
+                    .drapImportantDescription()
+                    .foregroundStyle(Color.drapTertiaryText)
             }
-            
-            Tab("Aujourd'hui", systemImage: "calendar", value: 1) {
-                TodayPage(userVM: userVM)
+        } else if !appEnvironment.connected {
+            LoginPage(login: appEnvironment.$login, password: appEnvironment.$password, userRole: .student) {
+                appEnvironment.connect()
             }
-            
-            Tab("À Venir", systemImage: "arrow.right", value: 2) {
-                FuturPage(userVM: userVM)
+            .onChange(of: appEnvironment.password) { oldValue, newValue in
+                print(newValue)
             }
+        } else {
+            MainPage()
+                .onAppear {
+                    appEnvironment.loadCourses()
+                }
         }
-        .tint(.drapBlue)
     }
 }
 
@@ -45,6 +49,7 @@ struct ContentView: View {
 
 #Preview {
     PreviewScaffold(disablePadding: true) {
-        ContentView(userVM: UserVM())
+        ContentView()
+            .environment(AppEnvironment())
     }
 }
